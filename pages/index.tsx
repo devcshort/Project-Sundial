@@ -1,4 +1,5 @@
 import { Header } from '@/components/Header';
+import { LightboxImage } from '@/components/LightboxImage';
 import {
   AspectRatio,
   Box,
@@ -89,8 +90,27 @@ export default function Home({ images }: Props) {
           {images.map((image: any) => (
             <Card key={image.src}>
               <CardBody>
-                <AspectRatio ratio={4 / 3}>
-                  <Image
+                <AspectRatio
+                  ratio={4 / 3}
+                  borderRadius="md"
+                  overflow="hidden"
+                  _hover={{ cursor: 'pointer' }}
+                >
+                  <LightboxImage
+                    modalTitle={
+                      <Flex alignItems="center" gap={2}>
+                        <Image
+                          src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${image.meta.country}.svg`}
+                          alt=""
+                          width={24}
+                          height={24}
+                        />
+                        <Heading size="md">
+                          {image.meta.city}, {image.meta.state}{' '}
+                          {image.meta.country}
+                        </Heading>
+                      </Flex>
+                    }
                     src={`/archive/${image.src}`}
                     alt={`Photo of the sun from ${image.meta.city}, ${image.meta.state} ${image.meta.country}`}
                     width={200}
