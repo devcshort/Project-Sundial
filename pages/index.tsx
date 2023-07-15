@@ -79,6 +79,12 @@ export default function Home({ images }: Props) {
       <Header />
 
       <Container maxW="container.xl" as="main" p={4}>
+        <Heading as="h3" size="lg" textTransform="capitalize">
+          Today&apos;s images
+        </Heading>
+
+        <Divider mt={2} mb={4} borderColor="black" />
+
         <SimpleGrid columns={4} spacing={4}>
           {images.map((image: any) => (
             <Card key={image.src}>
