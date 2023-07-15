@@ -75,8 +75,7 @@ export function Header() {
         src="/world_map.jpg"
         fill
         alt=""
-        style={{ zIndex: -1 }}
-        objectFit="cover"
+        style={{ zIndex: -1, objectFit: 'cover' }}
       />
 
       <Box

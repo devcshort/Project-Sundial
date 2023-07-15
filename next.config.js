@@ -4,6 +4,7 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    domains: ['purecatamphetamine.github.io'],
   },
 };
 
